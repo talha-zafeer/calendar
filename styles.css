@@ -127,14 +127,63 @@ header {
 .event-half {
   border-left: 8px solid rgb(0, 191, 0);
   background-color: rgb(255, 255, 255, 0.8);
-  padding: 20px;
+  padding: 10px;
   z-index: 1;
   margin-top: 40px;
   margin-left: 10px;
   height: 100px;
   box-shadow: 3px 0px 5px 0px lightgrey;
   width: 100%;
+}
+.single-half-event-bot {
   display: flex;
+  border-left: 8px solid rgb(0, 191, 0);
+  background-color: white;
+  width: 100%;
+  padding: 15px;
+  box-shadow: 3px 0px 5px 0px lightgrey;
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+.single-half-event-top {
+  display: flex;
+  border-left: 8px solid rgb(0, 191, 0);
+  background-color: white;
+  width: 100%;
+  padding: 15px;
+  box-shadow: 3px 0px 5px 0px lightgrey;
+  margin-left: 10px;
+  margin-top: -10px;
+}
+
+.single-half-event-top h5 {
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.single-half-event-top span {
+  color: rgb(0, 191, 0);
+  padding: 0 5px;
+}
+
+.single-half-event-top p {
+  color: gray;
+  text-transform: uppercase;
+}
+.single-half-event-bot h5 {
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.single-half-event-bot span {
+  color: rgb(0, 191, 0);
+  padding: 0 5px;
+}
+
+.single-half-event-bot p {
+  color: gray;
+  text-transform: uppercase;
 }
 .event-half p {
   color: gray;
@@ -143,7 +192,7 @@ header {
 
 .event-half h5 {
   font-size: 16px;
-  padding: 0px 8px;
+  padding: 8px 0px;
 }
 
 .event-half span {

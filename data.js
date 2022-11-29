@@ -15,7 +15,7 @@ const events = [
   },
   {
     startTime: 2,
-    endTime: 4,
+    endTime: 8,
     name: "Event 2",
     location: "Location 2",
     hoursIncluded: function () {
@@ -93,8 +93,8 @@ const events = [
     },
   },
   {
-    startTime: 8,
-    endTime: 23,
+    startTime: 15,
+    endTime: 20,
     name: "Event 4",
     location: "Location 4",
     hoursIncluded: function () {
@@ -119,8 +119,8 @@ const events = [
     },
   },
   {
-    startTime: 11,
-    endTime: 23,
+    startTime: 8,
+    endTime: 8.5,
     name: "Event 4",
     location: "Location 4",
     hoursIncluded: function () {
@@ -131,9 +131,10 @@ const events = [
       return hoursSet;
     },
   },
+
   {
     startTime: 14,
-    endTime: 24,
+    endTime: 17.5,
     name: "Event 4",
     location: "Location 4",
     hoursIncluded: function () {

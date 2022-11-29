@@ -23,8 +23,19 @@ const setEvent = (startTime, endTime, name, location) => {
   const newEvent = hourSelector[Math.floor(startTime)].appendChild(
     createContent(startTime, name, location)
   );
-  if (startTime < Math.ceil(startTime)) {
-    newEvent.classList.add("event-half");
+  if (startTime < Math.ceil(startTime) || endTime < Math.ceil(endTime)) {
+    if (startTime == Math.floor(endTime)) {
+      newEvent.classList.add("single-half-event-top");
+    } else if (Math.ceil(startTime) == endTime) {
+      newEvent.classList.add("single-half-event-bot");
+    } else {
+      newEvent.classList.add("event-half");
+    }
+
+    // console.log(endTime, startTime);
+    // startTime == Math.floor(endTime)
+    //   ? newEvent.classList.add("single-half-event-bot")
+    //   : newEvent.classList.add("event-half");
   } else {
     newEvent.classList.add("event");
   }
