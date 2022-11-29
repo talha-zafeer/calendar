@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  color: #333;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+  padding: 30px;
+  text-align: end;
+  font-size: 16px;
+}
+
+.all-day-task {
+  padding: 5px 0px;
+  background-color: rgb(230, 230, 230, 0.3);
+  display: flex;
+  align-items: center;
+}
+
+.am {
+  display: flex;
+  background-color: rgb(237, 30, 121, 0.03);
+  border-top: 2px solid rgb(237, 30, 121);
+}
+
+.pm {
+  display: flex;
+  background-color: rgb(119, 191, 245, 0.1);
+  border-top: 2px solid rgb(119, 191, 245);
+}
+.am h1 {
+  flex: 10%;
+  padding: 20px;
+  color: rgb(237, 30, 121);
+  font-size: 40px;
+}
+
+.pm h1 {
+  flex: 10%;
+  padding: 20px;
+  color: rgb(63, 169, 245);
+  font-size: 40px;
+}
+.hours {
+  flex: 90%;
+}
+
+.hour {
+  display: flex;
+  border-bottom: 1px solid darkgray;
+  height: 100px;
+  padding: 10px 0;
+}
+.full {
+  flex: 10%;
+  font-weight: bold;
+  font-size: 18px;
+}
+.half {
+  flex: 90%;
+  display: flex;
+  flex-direction: column;
+  /* z-index: 0; */
+}
+.half-top {
+  height: 50%;
+  z-index: 0;
+  padding-left: 50px;
+  display: flex;
+}
+.half-bottom {
+  border-top: 1px solid lightgray;
+  padding: 5px 0;
+  height: 50%;
+  width: 100%;
+  font-size: 14px;
+  color: gray;
+}
+
+.event-all-day {
+  display: flex;
+  margin-left: 23%;
+  border-left: 8px solid rgb(0, 191, 0);
+  background-color: white;
+  width: 100%;
+  padding: 15px;
+  box-shadow: 3px 0px 5px 0px lightgrey;
+}
+
+.event-all-day h5 {
+  font-size: 16px;
+  padding: 0 5px;
+}
+
+.event-all-day span {
+  color: rgb(0, 191, 0);
+  padding: 0 5px;
+}
+
+.event-all-day p {
+  color: gray;
+  text-transform: uppercase;
+}
+
+.event {
+  border-left: 8px solid rgb(0, 191, 0);
+  background-color: rgb(255, 255, 255, 0.8);
+  padding: 10px;
+  z-index: 1;
+  margin-top: -10px;
+  margin-left: 10px;
+  height: 100px;
+  box-shadow: 3px 0px 5px 0px lightgrey;
+  width: 100%;
+}
+
+.event-half {
+  border-left: 8px solid rgb(0, 191, 0);
+  background-color: rgb(255, 255, 255, 0.8);
+  padding: 20px;
+  z-index: 1;
+  margin-top: 40px;
+  margin-left: 10px;
+  height: 100px;
+  box-shadow: 3px 0px 5px 0px lightgrey;
+  width: 100%;
+  display: flex;
+}
+.event-half p {
+  color: gray;
+  text-transform: uppercase;
+}
+
+.event-half h5 {
+  font-size: 16px;
+  padding: 0px 8px;
+}
+
+.event-half span {
+  color: rgb(0, 191, 0);
+}
+.event p {
+  color: gray;
+  text-transform: uppercase;
+}
+.event h5 {
+  font-size: 16px;
+  padding: 8px 0;
+}
+.event span {
+  padding-top: 20px;
+  color: rgb(0, 191, 0);
+}
