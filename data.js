@@ -93,8 +93,21 @@ const events = [
     },
   },
   {
-    startTime: 10,
-    endTime: 11,
+    startTime: 8,
+    endTime: 23,
+    name: "Event 4",
+    location: "Location 4",
+    hoursIncluded: function () {
+      const hoursSet = [];
+      for (let i = this.startTime; i <= this.endTime; i++) {
+        hoursSet.push(i);
+      }
+      return hoursSet;
+    },
+  },
+  {
+    startTime: 9,
+    endTime: 10,
     name: "Event 4",
     location: "Location 4",
     hoursIncluded: function () {
@@ -107,7 +120,7 @@ const events = [
   },
   {
     startTime: 11,
-    endTime: 14,
+    endTime: 23,
     name: "Event 4",
     location: "Location 4",
     hoursIncluded: function () {
@@ -119,21 +132,8 @@ const events = [
     },
   },
   {
-    startTime: 12,
-    endTime: 16,
-    name: "Event 4",
-    location: "Location 4",
-    hoursIncluded: function () {
-      const hoursSet = [];
-      for (let i = this.startTime; i <= this.endTime; i++) {
-        hoursSet.push(i);
-      }
-      return hoursSet;
-    },
-  },
-  {
-    startTime: 13,
-    endTime: 18,
+    startTime: 14,
+    endTime: 24,
     name: "Event 4",
     location: "Location 4",
     hoursIncluded: function () {
@@ -147,8 +147,8 @@ const events = [
 ];
 
 events.sort(
-  (a, b) => (a.hoursIncluded().length < b.hoursIncluded().length ? 1 : -1)
-  // (a, b) => (a.startTime > b.startTime ? 1 : -1)
+  // (a, b) => (a.hoursIncluded().length < b.hoursIncluded().length ? 1 : -1)
+  (a, b) => (a.startTime > b.startTime ? 1 : -1)
 );
 
 export { events };

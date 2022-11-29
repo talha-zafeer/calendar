@@ -28,7 +28,7 @@ const setEvent = (startTime, endTime, name, location) => {
   } else {
     newEvent.classList.add("event");
   }
-  newEvent.style.height = (endTime - startTime) * 100 + "px";
+  newEvent.style.height = (endTime - startTime) * 100 - 1 + "px";
   renderedEvents.push(newEvent);
   align();
 };
