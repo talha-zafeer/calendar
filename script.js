@@ -5,6 +5,8 @@ let renderedEvents = [];
 let hourSelector = [];
 let halfHourSelector = [];
 
+//Assign id to every time set (e.g 1:00, 1:30, 2:00, 2:30)
+
 function init() {
   for (let i = 0; i < 24; i++) {
     document.querySelectorAll(`.half-top`)[i].setAttribute("id", `full-${i}`);
@@ -25,6 +27,7 @@ function init() {
   }
 }
 
+//Renders an event to the web-page
 const setEvent = (startTime, endTime, name, location) => {
   let newEvent;
   if (startTime < Math.ceil(startTime)) {
@@ -51,6 +54,8 @@ const setEvent = (startTime, endTime, name, location) => {
   newEvent.style.height = height + 1 + "px";
 };
 
+//Aligns the rendered events to consume equal width if they are overlapping eachother
+
 const align = () => {
   let time, time1, time2;
   for (let i = 0; i < renderedEvents.length; i++) {
@@ -70,6 +75,8 @@ const align = () => {
   }
 };
 
+//Gets time in text from a renderedEvent and converts it into float for Mathematical calculations
+
 const getFloatTime = (time1, time2) => {
   const time = [];
   time1 = time1.substring(0, time1.indexOf(" "));
@@ -82,6 +89,8 @@ const getFloatTime = (time1, time2) => {
     : time.push(parseFloat(time2));
   return time;
 };
+
+//Generates content to display on an event
 
 const createContent = (startTime, endTime, eventName, eventLocation) => {
   const content = document.createElement("div");
@@ -111,6 +120,8 @@ const createContent = (startTime, endTime, eventName, eventLocation) => {
   return content;
 };
 
+//Checks if two events are overlapping each-other
+
 const elementsOverlap = (el1, el2) => {
   const event1 = el1.getBoundingClientRect();
   const event2 = el2.getBoundingClientRect();
@@ -122,5 +133,5 @@ const elementsOverlap = (el1, el2) => {
     event1.left > event2.right
   );
 };
+
 init();
-console.log(events);
