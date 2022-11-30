@@ -80,13 +80,25 @@ header {
 }
 .half-bottom {
   border-top: 1px solid lightgray;
-  padding: 5px 0;
   height: 50%;
+  /* z-index: 0; */
+  display: flex;
+  /* justify-content: flex-end; */
+  /* height: 50%;
   width: 100%;
   font-size: 14px;
-  color: gray;
+  color: gray; */
 }
 
+.half-bottom-1 {
+  flex: 1%;
+  padding-right: 9px;
+}
+.half-bottom-2 {
+  display: flex;
+  flex: 93%;
+  margin-top: 8px;
+}
 .event-all-day {
   display: flex;
   margin-left: 23%;
@@ -117,87 +129,64 @@ header {
   background-color: rgb(255, 255, 255, 0.8);
   padding: 10px;
   z-index: 1;
-  margin-top: -10px;
+  margin-top: -9px;
   margin-left: 10px;
   height: 100px;
   box-shadow: 3px 0px 5px 0px lightgrey;
   width: 100%;
 }
 
-.event-half {
+.event-half-top {
   border-left: 8px solid rgb(0, 191, 0);
   background-color: rgb(255, 255, 255, 0.8);
-  padding: 10px;
+  padding: 15px;
   z-index: 1;
-  margin-top: 40px;
   margin-left: 10px;
-  height: 100px;
+  margin-top: -9px;
+  /* height: 100px; */
   box-shadow: 3px 0px 5px 0px lightgrey;
   width: 100%;
-}
-.single-half-event-bot {
   display: flex;
-  border-left: 8px solid rgb(0, 191, 0);
-  background-color: white;
-  width: 100%;
-  padding: 15px;
-  box-shadow: 3px 0px 5px 0px lightgrey;
-  margin-top: 40px;
-  margin-left: 10px;
+}
+.event-half-top p {
+  color: gray;
+  text-transform: uppercase;
 }
 
-.single-half-event-top {
+.event-half-top h5 {
+  font-size: 16px;
+  padding: 0px 5px;
+}
+
+.event-half-top span {
+  color: rgb(0, 191, 0);
+}
+
+.event-half-bot {
+  border-left: 8px solid rgb(0, 191, 0);
+  background-color: rgb(255, 255, 255, 0.8);
+  padding: 15px;
+  z-index: 1;
+  margin-left: 10px;
+  margin-top: -9px;
+  box-shadow: 3px 0px 5px 0px lightgrey;
+  width: 100%;
   display: flex;
-  border-left: 8px solid rgb(0, 191, 0);
-  background-color: white;
-  width: 100%;
-  padding: 15px;
-  box-shadow: 3px 0px 5px 0px lightgrey;
-  margin-left: 10px;
-  margin-top: -10px;
 }
-
-.single-half-event-top h5 {
-  font-size: 16px;
-  padding: 0 10px;
-}
-
-.single-half-event-top span {
-  color: rgb(0, 191, 0);
-  padding: 0 5px;
-}
-
-.single-half-event-top p {
-  color: gray;
-  text-transform: uppercase;
-}
-.single-half-event-bot h5 {
-  font-size: 16px;
-  padding: 0 10px;
-}
-
-.single-half-event-bot span {
-  color: rgb(0, 191, 0);
-  padding: 0 5px;
-}
-
-.single-half-event-bot p {
-  color: gray;
-  text-transform: uppercase;
-}
-.event-half p {
+.event-half-bot p {
   color: gray;
   text-transform: uppercase;
 }
 
-.event-half h5 {
+.event-half-bot h5 {
   font-size: 16px;
-  padding: 8px 0px;
+  padding: 0px 5px;
 }
 
-.event-half span {
+.event-half-bot span {
   color: rgb(0, 191, 0);
 }
+
 .event p {
   color: gray;
   text-transform: uppercase;
