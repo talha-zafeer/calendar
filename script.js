@@ -1,13 +1,15 @@
 "use strict";
-import { events } from "./data.js";
+import { events, eventsAllDay } from "./data.js";
 
 let renderedEvents = [];
 let hourSelector = [];
 let halfHourSelector = [];
+let allDayEventsSelector;
 
 //Assign id to every time set (e.g 1:00, 1:30, 2:00, 2:30)
 
 function init() {
+  allDayEventsSelector = document.querySelector(".all-day-task");
   for (let i = 0; i < 24; i++) {
     document.querySelectorAll(`.half-top`)[i].setAttribute("id", `full-${i}`);
     hourSelector.push(document.querySelector(`#full-${i}`));
@@ -16,7 +18,9 @@ function init() {
       [i].setAttribute("id", `half-${i}`);
     halfHourSelector.push(document.querySelector(`#half-${i}`));
   }
-
+  for (let i = 0; i < eventsAllDay.length; i++) {
+    setAllDayEvent(eventsAllDay[i].name, eventsAllDay[i].location);
+  }
   for (let i = 0; i < events.length; i++) {
     setEvent(
       events[i].startTime,
@@ -88,6 +92,23 @@ const getFloatTime = (time1, time2) => {
     ? time.push(parseFloat(time2.replace(":30", ".5")))
     : time.push(parseFloat(time2));
   return time;
+};
+
+//Generates All Day events
+
+const setAllDayEvent = (eventName, eventLocation) => {
+  let newEvent;
+  const content = document.createElement("div");
+  const time = document.createElement("p");
+  const name = document.createElement("h5");
+  const location = document.createElement("span");
+
+  time.innerText = "All Day";
+  name.innerText = eventName;
+  location.innerText = eventLocation;
+  content.append(time, name, location);
+  newEvent = allDayEventsSelector.appendChild(content);
+  newEvent.classList.add("event-all-day");
 };
 
 //Generates content to display on an event
