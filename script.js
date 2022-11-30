@@ -23,22 +23,23 @@ const setEvent = (startTime, endTime, name, location) => {
   const newEvent = hourSelector[Math.floor(startTime)].appendChild(
     createContent(startTime, name, location)
   );
-  if (startTime < Math.ceil(startTime) || endTime < Math.ceil(endTime)) {
-    if (startTime == Math.floor(endTime)) {
-      newEvent.classList.add("single-half-event-top");
-    } else if (Math.ceil(startTime) == endTime) {
-      newEvent.classList.add("single-half-event-bot");
-    } else {
-      newEvent.classList.add("event-half");
-    }
-
-    // console.log(endTime, startTime);
-    // startTime == Math.floor(endTime)
-    //   ? newEvent.classList.add("single-half-event-bot")
-    //   : newEvent.classList.add("event-half");
+  if (startTime < Math.ceil(startTime)) {
+    newEvent.classList.add("event-half");
+    console.log(startTime);
   } else {
     newEvent.classList.add("event");
   }
+  // if (startTime < Math.ceil(startTime) || endTime < Math.ceil(endTime)) {
+  //   if (startTime == Math.floor(endTime)) {
+  //     newEvent.classList.add("single-half-event-top");
+  //   } else if (Math.ceil(startTime) == endTime) {
+  //     newEvent.classList.add("single-half-event-bot");
+  //   } else {
+  //     newEvent.classList.add("event-half");
+  //   }
+  // } else {
+  //   newEvent.classList.add("event");
+  // }
   newEvent.style.height = (endTime - startTime) * 100 - 1 + "px";
   renderedEvents.push(newEvent);
   align();
@@ -48,7 +49,7 @@ const align = () => {
   let time1, time2;
   for (let i = 0; i < renderedEvents.length; i++) {
     for (let j = i + 1; j < renderedEvents.length; j++) {
-      if (elementsOverlap(renderedEvents[i], renderedEvents[j])) {
+      if (checkOverlapping(renderedEvents[i], renderedEvents[j])) {
         time1 = parseFloat(
           renderedEvents[i].parentElement.children[0].innerText.substring(
             0,
@@ -86,9 +87,9 @@ const createContent = (startTime, eventName, eventLocation) => {
   return content;
 };
 
-const elementsOverlap = (el1, el2) => {
-  const event1 = el1.getBoundingClientRect();
-  const event2 = el2.getBoundingClientRect();
+const checkOverlapping = (e1, e2) => {
+  const event1 = e1.getBoundingClientRect();
+  const event2 = e2.getBoundingClientRect();
 
   return !(
     event1.top > event2.bottom ||
